@@ -28,8 +28,18 @@ const LUMIERE_CHORUS = note(`<
   [e3@1.5 [d3@3 e3]]
   [c#3 - - -]
 >`)
-  .sound("piano")
+  //.sound("piano")
+  .sound("saw")
+  //.sound("sine")
+  .fm(20)
+  .fmdecay(.5)
+  .fmattack(.05)
+  .fmsustain(.3)
+  //.fmenv(3)
+  .room(.5)
   .pianoroll({labels:true})
+  ._scope()
+
 
 const LUMIERE_BACKGROUND = note(`<
   [[f#3 f#3 f#3 f#3]]
@@ -46,7 +56,7 @@ $: stack(
   //VERSO,
   //VERSO_COUNTER,
   LUMIERE_CHORUS,
-  LUMIERE_BACKGROUND
+  //LUMIERE_BACKGROUND
   
 )
 
