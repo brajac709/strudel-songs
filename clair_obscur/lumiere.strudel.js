@@ -1,4 +1,3 @@
-
 //setcpm(70/4) // verso
 setcpm(150/4) // lumiere
 
@@ -22,21 +21,22 @@ const LUMIERE_CHORUS = note(`<
   [f#3 f#3 f#3 [e3 d3]]
   [f#3 f#3 f#3 [e3 d3]]
   [g3@3 f#3]
-  [e3 - - -]
+  [e3 -]
   [f#3 f#3 f#3 [e3 d3]]
   [f#3 f#3 f#3 [e3 f#3]]
   [e3@1.5 [d3@3 e3]]
-  [c#3 - - -]
+  [c#3 -]
 >`)
-  //.sound("piano")
-  .sound("saw")
+  .sound("piano")
+  .legato(1)
+  //.sound("saw")
   //.sound("sine")
-  .fm(20)
-  .fmdecay(.5)
-  .fmattack(.05)
-  .fmsustain(.3)
+  //.fm(20)
+  //.fmdecay(.5)
+  //.fmattack(.05)
+  //.fmsustain(.3)
   //.fmenv(3)
-  .room(.5)
+  //.room(.5)
   .pianoroll({labels:true})
   ._scope()
 
@@ -48,6 +48,7 @@ const LUMIERE_BACKGROUND = note(`<
   [[d3 d3 d3 d3]]
 >`)
   .sound("psaltery_pluck")
+  .legato(.7)
   .gain(.6)
   ._pianoroll({labels:true})
 
@@ -55,8 +56,8 @@ const LUMIERE_BACKGROUND = note(`<
 $: stack(
   //VERSO,
   //VERSO_COUNTER,
-  LUMIERE_CHORUS,
-  //LUMIERE_BACKGROUND
+  //LUMIERE_CHORUS,
+  LUMIERE_BACKGROUND
   
 )
 
