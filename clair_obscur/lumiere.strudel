@@ -38,26 +38,26 @@ const LUMIERE_CHORUS = note(`<
   //.fmenv(3)
   //.room(.5)
   .pianoroll({labels:true})
-  ._scope()
+  //._scope()
 
 
-const LUMIERE_BACKGROUND = note(`<
-  [[f#3 f#3 f#3 f#3]]
-  [[f#3 f#3 f#3 f#3]]
-  [[e3 e3 e3 e3]]
-  [[d3 d3 d3 d3]]
->`)
+const LUMIERE_BACKGROUND = arrange(
+  [2, note("f#3*4")],
+  [1, note("e3*4")],
+  [1, note("d3*4")]
+)
   .sound("psaltery_pluck")
   .legato(.7)
   .gain(.6)
-  ._pianoroll({labels:true})
+  //._pianoroll({labels:true})
+  .pianoroll({labels:true})
 
 
 $: stack(
   //VERSO,
   //VERSO_COUNTER,
-  //LUMIERE_CHORUS,
-  LUMIERE_BACKGROUND
-  
+  LUMIERE_CHORUS,
+  LUMIERE_BACKGROUND,
 )
+
 
