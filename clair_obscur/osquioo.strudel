@@ -1,0 +1,25 @@
+setcpm(150/4) // lumiere
+
+
+const TRANSITION = sound("bd*16");
+
+const RHYTHM1 = stack(
+    sound("shaker_small*16").gain(5),
+    sound("bd").beat("0,3,4,6,10,12", 16),
+    sound("rim").beat("0,6,12",16).gain(.4)
+)
+
+const BASS1 = sound("f#3")
+    .sound("saw")
+    .legato(1.5)
+    .fm(3)
+    //.fmattack(.2)
+    .fmdecay(.5)
+    .fmsustain(.8)
+    .beat("0,6,12",16)
+    .scope()
+
+$: stack(
+    RHYTHM1,
+    BASS1
+)
