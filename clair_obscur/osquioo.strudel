@@ -19,7 +19,14 @@ const BASS1 = sound("f#3")
     .beat("0,6,12",16)
     .scope()
 
+// this isn't really osquio, but it is fun
+const HIGH = sound("<f#7 a#8 c#8 d8>")
+    .sound("supersaw")
+    .beat("0,1,2,3,4,5,7,9,12", 16)
+    .scope()
+
 $: stack(
     RHYTHM1,
-    BASS1
+    BASS1,
+    HIGH
 )
