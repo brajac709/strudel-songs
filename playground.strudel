@@ -1,0 +1,22 @@
+setcpm(150/4) 
+
+const BACK = note("<a#3 c#3 d3 f#2>")
+    .sound("supersaw")
+    .beat("0,1,2,3,4,5,7,9,13", 16)
+    .scope()
+
+const RHYTHM1 = stack(
+    sound("shaker_small*16").gain(8),
+    sound("bd").beat("0,3,6,10,13",16).gain(.5),
+    sound("rim").beat("0,6,12",16)
+)
+
+const PADS = note("<[<a#3> <d3>]>")
+    .sound("gm_pad_poly")
+    .scope()
+
+$: stack(
+    //RHYTHM1,
+    //BACK,
+    PADS
+)
